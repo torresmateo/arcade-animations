@@ -1,5 +1,5 @@
 import { makeScene2D, Code, Rect, Txt, Polygon, Line, lines } from '@motion-canvas/2d';
-import { createRef, createSignal, beginSlide, DEFAULT, all, waitFor, } from '@motion-canvas/core';
+import { createRef, createSignal, beginSlide, DEFAULT, all, waitFor, slideTransition, Direction, } from '@motion-canvas/core';
 
 
 interface BaseProps{
@@ -213,4 +213,5 @@ export default makeScene2D(function* (view) {
     main_bar().fill(colors.ok, 0.5),
   );
   yield* waitFor(1);
+  yield* slideTransition(Direction.Left);
 });
